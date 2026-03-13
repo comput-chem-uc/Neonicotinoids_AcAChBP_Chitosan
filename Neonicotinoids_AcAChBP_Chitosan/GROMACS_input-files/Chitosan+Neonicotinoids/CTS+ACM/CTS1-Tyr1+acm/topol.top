@@ -1,0 +1,32 @@
+; Include forcefield parameters
+#include "amber99sb-ildn.ff/forcefield.itp"
+
+; Include molecules topologies
+
+[ atomtypes ]
+#include "cts1n-1tyr-novo_atoms.itp"
+#include "acm_atoms.itp"
+
+#include "CTS1N-1Tyr-NOVO_GMX.itp"
+#ifdef POSRES
+#include "posre_cts1n-1tyr-novo.itp"
+#endif
+
+#include "ACM_GMX.itp"
+#ifdef POSRES
+#include "posre_acm.itp"
+#endif
+
+
+#include "amber99sb-ildn.ff/tip4pew.itp"
+#include "amber99sb-ildn.ff/ions.itp"
+
+
+[ system ]
+CUR in water
+
+[ molecules ]
+; Compound        nmols
+CTS		1
+ACM             1
+SOL              4110

@@ -1,0 +1,32 @@
+; Include forcefield parameters
+#include "amber99sb-ildn.ff/forcefield.itp"
+
+; Include molecules topologies
+
+[ atomtypes ]
+#include "cts-novo_atoms.itp"
+#include "clo_atoms.itp"
+
+#include "CTS-NOVO_GMX.itp"
+#ifdef POSRES
+#include "posre_cts-novo.itp"
+#endif
+
+#include "CLO_GMX.itp"
+#ifdef POSRES
+#include "posre_clo.itp"
+#endif
+
+
+#include "amber99sb-ildn.ff/tip4pew.itp"
+#include "amber99sb-ildn.ff/ions.itp"
+
+
+[ system ]
+CTS1 and CLO in water
+
+[ molecules ]
+; Compound        nmols
+CTS		1
+CLO             1
+SOL              4124
